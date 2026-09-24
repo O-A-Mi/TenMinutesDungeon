@@ -1,0 +1,16 @@
+node_modules/
+**/node_modules/
+**/dist/
+**/build/
+**/coverage/
+.env
+.env.*
+package-lock.json
+**/package-lock.json
+*.png
+*.png~
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.ico

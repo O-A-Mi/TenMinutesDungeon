@@ -1,0 +1,217 @@
+[
+	{
+		"id": "iron-skin",
+		"name": "Pele de Ferro",
+		"description": "Aumenta a vida máxima.",
+		"iconName": "shield",
+		"kind": "general",
+		"category": "defense",
+		"maxStack": 3,
+		"stackMode": "tier-total",
+		"tiers": [
+			{ "rarity": "common", "modifiers": { "maxHealth": 20 } },
+			{ "rarity": "uncommon", "modifiers": { "maxHealth": 45 } },
+			{ "rarity": "rare", "modifiers": { "maxHealth": 75 } }
+		]
+	},
+	{
+		"id": "quick-step",
+		"name": "Passo Mercurial",
+		"description": "Aumenta a velocidade de movimento.",
+		"iconName": "boot",
+		"kind": "general",
+		"category": "mobility",
+		"maxStack": 3,
+		"stackMode": "tier-total",
+		"tiers": [
+			{ "rarity": "common", "modifiers": { "moveSpeed": 18 } },
+			{ "rarity": "uncommon", "modifiers": { "moveSpeed": 40 } },
+			{ "rarity": "rare", "modifiers": { "moveSpeed": 66 } }
+		]
+	},
+	{
+		"id": "sawn-barrel",
+		"name": "Cano Cerrado",
+		"description": "Transforma a bacamarte em uma escopeta de dispersão brutal.",
+		"iconName": "shotgun",
+		"kind": "weapon",
+		"category": "offense",
+		"weaponId": "blunderbuss",
+		"maxStack": 3,
+		"stackMode": "tier-total",
+		"effect": "sawn_barrel",
+		"conflictsWith": ["precision-barrel"],
+		"tiers": [
+			{ "rarity": "common", "modifiers": { "damage": 3 }, "spreadDegrees": 34, "projectiles": 7 },
+			{ "rarity": "uncommon", "modifiers": { "damage": 7 }, "spreadDegrees": 44, "projectiles": 8 },
+			{ "rarity": "rare", "modifiers": { "damage": 12 }, "spreadDegrees": 58, "projectiles": 10 }
+		]
+	},
+	{
+		"id": "precision-barrel",
+		"name": "Precisão",
+		"description": "Transforma a bacamarte em um único tiro de longo alcance que premia distância.",
+		"iconName": "crosshair",
+		"kind": "weapon",
+		"category": "offense",
+		"weaponId": "blunderbuss",
+		"maxStack": 3,
+		"stackMode": "tier-total",
+		"effect": "precision_barrel",
+		"conflictsWith": ["sawn-barrel"],
+		"tiers": [
+			{
+				"rarity": "common",
+				"modifiers": { "range": 64 },
+				"projectiles": 1,
+				"spreadDegrees": 0,
+				"distanceDamageBonus": 0.35
+			},
+			{
+				"rarity": "uncommon",
+				"modifiers": { "range": 64, "damage": 3 },
+				"projectiles": 1,
+				"spreadDegrees": 0,
+				"distanceDamageBonus": 0.55
+			},
+			{
+				"rarity": "rare",
+				"modifiers": { "range": 64, "damage": 7 },
+				"projectiles": 1,
+				"spreadDegrees": 0,
+				"distanceDamageBonus": 0.8
+			}
+		]
+	},
+	{
+		"id": "hungry-edge",
+		"name": "Fio Voraz",
+		"description": "Aumenta o crítico da espada.",
+		"iconName": "sword",
+		"kind": "weapon",
+		"category": "offense",
+		"weaponId": "sword",
+		"maxStack": 3,
+		"stackMode": "tier-total",
+		"tiers": [
+			{ "rarity": "common", "modifiers": { "critChance": 0.12 } },
+			{ "rarity": "uncommon", "modifiers": { "critChance": 0.26 } },
+			{ "rarity": "rare", "modifiers": { "critChance": 0.42 } }
+		]
+	},
+	{
+		"id": "fatal-geometry",
+		"name": "Geometria Mortal",
+		"description": "Torna os ricochetes da faca mais letais.",
+		"iconName": "knife",
+		"kind": "weapon",
+		"category": "offense",
+		"weaponId": "knife",
+		"maxStack": 3,
+		"stackMode": "tier-total",
+		"tiers": [
+			{ "rarity": "common", "modifiers": { "critMultiplier": 0.4 } },
+			{ "rarity": "uncommon", "modifiers": { "critMultiplier": 0.85 } },
+			{ "rarity": "rare", "modifiers": { "critMultiplier": 1.35 } }
+		]
+	},
+	{
+		"id": "vampiric-mark",
+		"name": "Marca Vampírica",
+		"description": "Recupera uma parcela do dano causado.",
+		"iconName": "drop",
+		"kind": "general",
+		"category": "healing",
+		"maxStack": 3,
+		"stackMode": "tier-total",
+		"effect": "vampirism",
+		"tiers": [
+			{ "rarity": "common", "lifesteal": 0.1 },
+			{ "rarity": "uncommon", "lifesteal": 0.16 },
+			{ "rarity": "rare", "lifesteal": 0.24 }
+		]
+	},
+	{
+		"id": "duelist-sigil",
+		"name": "Sigilo do Duelista",
+		"description": "Troféu raro do círculo de duelo.",
+		"iconName": "duel",
+		"kind": "rare",
+		"category": "defense",
+		"maxStack": 3,
+		"stackMode": "tier-total",
+		"tiers": [
+			{ "rarity": "common", "modifiers": { "maxHealth": 15 } },
+			{ "rarity": "uncommon", "modifiers": { "maxHealth": 32 } },
+			{ "rarity": "rare", "modifiers": { "maxHealth": 52 } }
+		]
+	},
+	{
+		"id": "loaded-die",
+		"name": "Dado Chumbado",
+		"description": "A bacamarte passa a consumir o saco crítico por disparo.",
+		"iconName": "die",
+		"kind": "weapon",
+		"category": "offense",
+		"weaponId": "blunderbuss",
+		"maxStack": 3,
+		"stackMode": "additive-per-copy",
+		"effect": "enable_blunderbuss_crit",
+		"tiers": [{ "rarity": "common" }, { "rarity": "uncommon" }, { "rarity": "rare" }]
+	},
+	{
+		"id": "returning-oath",
+		"name": "Juramento de Retorno",
+		"description": "Amplia o corte da faca ao retornar.",
+		"iconName": "return",
+		"kind": "weapon",
+		"category": "offense",
+		"weaponId": "knife",
+		"maxStack": 3,
+		"stackMode": "once",
+		"effect": "recall_width",
+		"tiers": [{ "rarity": "common" }, { "rarity": "uncommon" }, { "rarity": "rare" }]
+	},
+	{
+		"id": "third-angle",
+		"name": "Terceiro Ângulo",
+		"description": "Concede ricochetes adicionais à faca.",
+		"iconName": "ricochet",
+		"kind": "weapon",
+		"category": "offense",
+		"weaponId": "knife",
+		"maxStack": 3,
+		"stackMode": "additive-per-copy",
+		"effect": "extra_knife_bounce",
+		"tiers": [{ "rarity": "common" }, { "rarity": "uncommon" }, { "rarity": "rare" }]
+	},
+	{
+		"id": "echoing-edge",
+		"name": "Gume Ecoante",
+		"description": "A espada produz um segundo arco enfraquecido.",
+		"iconName": "double-slash",
+		"kind": "weapon",
+		"category": "offense",
+		"weaponId": "sword",
+		"maxStack": 3,
+		"stackMode": "once",
+		"effect": "double_sword_arc",
+		"tiers": [{ "rarity": "common" }, { "rarity": "uncommon" }, { "rarity": "rare" }]
+	},
+	{
+		"id": "broken-clock",
+		"name": "Relógio Quebrado",
+		"description": "Mais tempo na próxima zona, mas inimigos causam mais dano.",
+		"iconName": "broken-clock",
+		"kind": "general",
+		"category": "risk-reward",
+		"maxStack": 3,
+		"stackMode": "tier-total",
+		"effect": "cursed_clock",
+		"tiers": [
+			{ "rarity": "common", "timeBonusSeconds": 60, "enemyDamageMultiplier": 1.12 },
+			{ "rarity": "uncommon", "timeBonusSeconds": 90, "enemyDamageMultiplier": 1.2 },
+			{ "rarity": "rare", "timeBonusSeconds": 120, "enemyDamageMultiplier": 1.3 }
+		]
+	}
+]

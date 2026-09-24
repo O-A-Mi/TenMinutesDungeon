@@ -1,0 +1,222 @@
+{
+	"wretch": {
+		"id": "wretch",
+		"name": "Resíduo",
+		"behavior": "chaser",
+		"sprite": "/sprites/enemies/wretch.png",
+		"color": 11696743,
+		"maxHealth": 28,
+		"damage": 8,
+		"cooldownMs": 900,
+		"moveSpeed": 72,
+		"critChance": 0.04,
+		"critMultiplier": 1.5,
+		"range": 30,
+		"intelligenceLevel": 2,
+		"collisionAction": "avoid",
+		"knockbackTendency": 0.9,
+		"canHeal": false,
+		"canDodge": false,
+		"canDash": false,
+		"attackSpeed": 1,
+		"attacks": [
+			{
+				"id": "wretch-punch",
+				"type": "punch",
+				"unlockZone": 1,
+				"telegraphMs": 200,
+				"cooldownMs": 900,
+				"range": 30,
+				"weight": 1,
+				"propInteraction": "block"
+			},
+			{
+				"id": "wretch-lunge",
+				"type": "ground-punch",
+				"unlockZone": 2,
+				"telegraphMs": 300,
+				"cooldownMs": 1450,
+				"range": 45,
+				"weight": 0.55,
+				"knockdownMs": 600,
+				"propInteraction": "block"
+			},
+			{
+				"id": "wretch-spit",
+				"type": "distance",
+				"unlockZone": 3,
+				"telegraphMs": 300,
+				"cooldownMs": 1600,
+				"range": 150,
+				"weight": 0.45,
+				"propInteraction": "block"
+			}
+		]
+	},
+	"acolyte": {
+		"id": "acolyte",
+		"name": "Acólito",
+		"behavior": "shooter",
+		"sprite": "/sprites/enemies/acolyte.png",
+		"color": 9271451,
+		"maxHealth": 22,
+		"damage": 7,
+		"cooldownMs": 1300,
+		"moveSpeed": 45,
+		"critChance": 0.08,
+		"critMultiplier": 1.5,
+		"range": 220,
+		"intelligenceLevel": 7,
+		"collisionAction": "avoid",
+		"knockbackTendency": 0.72,
+		"canHeal": true,
+		"canDodge": true,
+		"canDash": false,
+		"attackSpeed": 0.85,
+		"attacks": [
+			{
+				"id": "acolyte-bolt",
+				"type": "distance",
+				"unlockZone": 1,
+				"telegraphMs": 200,
+				"cooldownMs": 1300,
+				"range": 220,
+				"weight": 1,
+				"propInteraction": "block"
+			},
+			{
+				"id": "acolyte-wave",
+				"type": "wave-distance",
+				"unlockZone": 2,
+				"telegraphMs": 300,
+				"cooldownMs": 1900,
+				"range": 250,
+				"weight": 0.7,
+				"projectiles": 3,
+				"propInteraction": "damage-and-continue"
+			},
+			{
+				"id": "acolyte-panic",
+				"type": "punch",
+				"unlockZone": 3,
+				"telegraphMs": 200,
+				"cooldownMs": 1100,
+				"range": 32,
+				"weight": 0.35,
+				"propInteraction": "block"
+			}
+		]
+	},
+	"hulker": {
+		"id": "hulker",
+		"name": "Homúnculo",
+		"behavior": "brute",
+		"sprite": "/sprites/enemies/hulker.png",
+		"color": 8545614,
+		"maxHealth": 58,
+		"damage": 16,
+		"cooldownMs": 1500,
+		"moveSpeed": 40,
+		"critChance": 0.12,
+		"critMultiplier": 1.75,
+		"range": 38,
+		"intelligenceLevel": 4,
+		"collisionAction": "destroy-props",
+		"knockbackTendency": 0.25,
+		"canHeal": false,
+		"canDodge": false,
+		"canDash": true,
+		"attackSpeed": 0.7,
+		"attacks": [
+			{
+				"id": "hulker-punch",
+				"type": "punch",
+				"unlockZone": 1,
+				"telegraphMs": 200,
+				"cooldownMs": 1500,
+				"range": 38,
+				"weight": 1,
+				"propInteraction": "block"
+			},
+			{
+				"id": "hulker-ground",
+				"type": "ground-punch",
+				"unlockZone": 2,
+				"telegraphMs": 300,
+				"cooldownMs": 2300,
+				"range": 70,
+				"weight": 0.7,
+				"knockdownMs": 600,
+				"propInteraction": "damage-and-continue"
+			},
+			{
+				"id": "hulker-rockfall",
+				"type": "ground-punch-rocks-fell",
+				"unlockZone": 3,
+				"telegraphMs": 300,
+				"cooldownMs": 3000,
+				"range": 220,
+				"weight": 0.45,
+				"projectiles": 3,
+				"knockdownMs": 600,
+				"propInteraction": "damage-and-continue"
+			}
+		]
+	},
+	"chronarch": {
+		"id": "chronarch",
+		"name": "Cronarca",
+		"behavior": "guardian",
+		"sprite": "/sprites/enemies/chronarch.png",
+		"color": 14267244,
+		"maxHealth": 260,
+		"damage": 15,
+		"cooldownMs": 800,
+		"moveSpeed": 52,
+		"critChance": 0.14,
+		"critMultiplier": 1.8,
+		"range": 250,
+		"intelligenceLevel": 10,
+		"collisionAction": "destroy-props",
+		"knockbackTendency": 0.08,
+		"canHeal": true,
+		"canDodge": true,
+		"canDash": true,
+		"attackSpeed": 1.25,
+		"attacks": [
+			{
+				"id": "chronarch-bolt",
+				"type": "distance",
+				"unlockZone": 1,
+				"telegraphMs": 200,
+				"cooldownMs": 900,
+				"range": 250,
+				"weight": 1,
+				"propInteraction": "block"
+			},
+			{
+				"id": "chronarch-wave",
+				"type": "wave-distance",
+				"unlockZone": 2,
+				"telegraphMs": 300,
+				"cooldownMs": 1650,
+				"range": 270,
+				"weight": 0.85,
+				"projectiles": 3,
+				"propInteraction": "damage-and-continue"
+			},
+			{
+				"id": "chronarch-collapse",
+				"type": "ground-punch-rocks-fell",
+				"unlockZone": 3,
+				"telegraphMs": 300,
+				"cooldownMs": 2600,
+				"range": 260,
+				"weight": 0.65,
+				"projectiles": 3,
+				"knockdownMs": 600,
+				"propInteraction": "damage-and-continue"
+			}
+		]
+	}
+}

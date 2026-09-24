@@ -1,0 +1,96 @@
+.boss-hud {
+	position: absolute;
+	z-index: 11;
+	left: 50%;
+	bottom: 66px;
+	transform: translateX(-50%);
+	width: min(520px, 72vw);
+	padding: 0.62rem 1.15rem 0.55rem;
+	text-align: center;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(15, 11, 14, 0.94) 10%,
+		rgba(15, 11, 14, 0.96) 90%,
+		transparent
+	);
+	border-top: 1px solid rgba(214, 177, 119, 0.55);
+	border-bottom: 1px solid rgba(214, 177, 119, 0.35);
+	filter: drop-shadow(0 5px 10px #000);
+}
+.boss-hud:before,
+.boss-hud:after {
+	content: '';
+	position: absolute;
+	top: -4px;
+	width: 9px;
+	height: 9px;
+	border: 1px solid var(--gold);
+	background: #1a1318;
+	transform: rotate(45deg);
+}
+.boss-hud:before {
+	left: 8px;
+}
+.boss-hud:after {
+	right: 8px;
+}
+.boss-hud > span {
+	display: block;
+	margin-bottom: 0.42rem;
+	color: var(--gold);
+	font-family: 'Cinzel', serif;
+	font-size: 0.9rem;
+	letter-spacing: 0.24em;
+	text-transform: uppercase;
+}
+.boss-hud > small {
+	display: block;
+	margin-top: 0.27rem;
+	color: #b5a18d;
+	font-size: 0.58rem;
+	letter-spacing: 0.1em;
+}
+.boss-health {
+	height: 8px;
+	padding: 1px;
+	border: 1px solid #82644d;
+	background: #171116;
+	clip-path: polygon(2% 0, 98% 0, 100% 50%, 98% 100%, 2% 100%, 0 50%);
+}
+.boss-health i {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, #8c3c40, #d58b63, #f2d89b);
+	transition: width 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+	box-shadow: 0 0 9px rgba(196, 113, 81, 0.6);
+}
+.boss-hud.collapsing > span {
+	animation: boss-name-pulse 0.12s steps(2, end) infinite;
+}
+.boss-hud.collapsing .boss-health i {
+	background: #fff5d8;
+	box-shadow: 0 0 24px #fff5d8;
+}
+.app.reduce-flashes .boss-hud.collapsing > span {
+	animation: none;
+}
+.app.reduce-flashes .boss-hud.collapsing .boss-health i {
+	box-shadow: 0 0 7px #f2d89b;
+}
+@keyframes boss-name-pulse {
+	50% {
+		opacity: 0.58;
+		letter-spacing: 0.31em;
+	}
+}
+.settings .flash-option {
+	display: flex !important;
+	align-items: center;
+	gap: 0.7rem;
+	grid-template-columns: none !important;
+}
+.settings .flash-option input {
+	accent-color: var(--blood);
+}

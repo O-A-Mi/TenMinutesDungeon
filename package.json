@@ -1,0 +1,26 @@
+{
+	"name": "ten-minutes-dungeon",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"scripts": {
+		"dev": "concurrently -n server,web -c magenta,cyan \"npm run dev -w @tmd/server\" \"npm run dev -w @tmd/web\"",
+		"build": "npm run build -w @tmd/shared && npm run build -w @tmd/server && npm run build -w @tmd/web",
+		"format": "prettier --write --ignore-unknown .",
+		"format:check": "prettier --check --ignore-unknown .",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"typecheck": "npm run build -w @tmd/shared && npm run typecheck -w @tmd/server && npm run typecheck -w @tmd/web"
+	},
+	"devDependencies": {
+		"concurrently": "^9.2.1",
+		"prettier": "^3.9.9",
+		"prettier-plugin-sql": "^0.20.0",
+		"typescript": "^5.9.2",
+		"vitest": "^3.2.4"
+	}
+}
